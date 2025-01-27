@@ -1,6 +1,7 @@
 {
   "name": "qa-dashboard",
   "version": "1.0.0",
+  "homepage": "https://dstekanov.github.io/qa-dashboard",
   "description": "QA Dashboard for visualizing test results",
   "scripts": {
     "start": "node backend/server.js",
@@ -8,7 +9,9 @@
     "client": "cd frontend && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "install-all": "npm install --legacy-peer-deps && cd frontend && npm install --legacy-peer-deps",
-    "populate": "node scripts/populate_data.js"
+    "populate": "node scripts/populate_data.js",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "dependencies": {
     "axios": "^1.6.5",
